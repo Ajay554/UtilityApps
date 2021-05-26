@@ -20,6 +20,14 @@ const base64UriComponent = function(option){
     console.log(atoa(uri));
   }
 }
+const epochHumanDate = function(option){
+  if(option == '1'){
+    const epochTime = readLineSync.question('\nPlease enter epoch time, ex - 1611041456000:\n');
+    console.log(new Date(epochTime*1000).toUTCString());
+  }else{
+
+  }
+}
 const hashing = function(option){
   const uri = readLineSync.question('\nPlease enter the string:\n');
   if(option == '1'){
@@ -94,6 +102,10 @@ const utilityApptoRun = function(selectedOption){
         flag = false;
         break;
       }
+    case '4':
+      option = readLineSync.question('\nselect 1 for humanDate, or 2 for epoch Time\n');
+      epochHumanDate(option);
+      decision = readLineSync.question('\nEnter 1 to continue, 2 to go to the main menu, 3 to exit\n')
   }
   }while(flag)
   
